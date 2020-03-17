@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitch Reward Autoclaim
 // @namespace    http://github.com/
-// @version      0.0.1
+// @version      0.0.2
 // @description  A Tampermonkey script that automatically claims Twitch channel point rewards
 // @author       mets11rap
 // @homepage     https://github.com/mets11rap/twitch-reward-autoclaim/
@@ -25,7 +25,7 @@ GM_config.init({
   }
 })
 
-GM_registerMenuCommand('Configure TRA', openCfg)
+GM_registerMenuCommand('Configure TRA', () => GM_config.open())
 
 function main () {
   const buttons = document.getElementsByClassName('tw-full-height tw-relative tw-z-above')
@@ -35,10 +35,6 @@ function main () {
 
     for (const clickable of clickables) clickable.click()
   }
-}
-
-function openCfg () {
-  GM_config.open()
 }
 
 setInterval(main, GN_config.get('interval') * 1000)
