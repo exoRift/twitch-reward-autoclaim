@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitch Reward Autoclaim
 // @namespace    http://github.com/
-// @version      0.0.2
+// @version      0.0.3
 // @description  A Tampermonkey script that automatically claims Twitch channel point rewards
 // @author       mets11rap
 // @homepage     https://github.com/mets11rap/twitch-reward-autoclaim/
@@ -37,4 +37,4 @@ function main () {
   }
 }
 
-setInterval(main, GN_config.get('interval') * 1000)
+setInterval(main, GM_config.get('interval') * 1000)
